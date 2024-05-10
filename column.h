@@ -22,5 +22,6 @@ int occurence_colonne(COLUMN* col, int value);
 int valeur_position(COLUMN *col, int position);
 int valeurs_superieures(COLUMN *col, int valeur);
 int valeurs_inferieures(COLUMN *col, int valeur);
+int valeurs_egales(COLUMN *col, int valeur);
 
 #endif //PROJET_C_DATAFRAME_COLUMN_H
