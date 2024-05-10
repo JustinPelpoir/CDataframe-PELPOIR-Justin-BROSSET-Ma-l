@@ -136,3 +136,19 @@ int valeurs_inferieures(COLUMN *col, int valeur)
 
     return nb;
 }
+
+
+// Trouver le nombre de valeurs égales à une valeur donnée en paramètre
+int valeurs_egales(COLUMN *col, int valeur)
+{
+    int nb=0;  // Compte le nb de valeurs égales à celle en paramètre
+
+    for(int i=0; i < col-> TL; i++)
+    {
+        // Pour chaque case non vide de la colonne, si la valeur est égale à la valeur recherchée -> incrémentation
+        if(col-> T[i] == valeur)
+            nb++;
+    }
+
+    return nb;
+}
