@@ -1,6 +1,7 @@
 #include "cdataframe.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include "column.h"
 #define REALOC_SIZE 256
 
 // Création d'un dataframe
