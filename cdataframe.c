@@ -18,7 +18,11 @@ FRAME *create_dataframe(char* title)
 
 int insertion_valeur(FRAME* frame, int value){
     int nb_val;
-    int num_col;
+    int num_col = -1;
     printf("Combien de valeurs voulez-vous ajouter ?");
-    
+    scanf(" %d", &nb_val);
+    do{
+        printf("Dans quelle colonne voulez-vous ajouter vos valeurs ?");
+        scanf(" %d", &num_col);
+    }while(num_col < 0 || num_col > TL);
 }
