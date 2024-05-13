@@ -14,3 +14,11 @@ FRAME *create_dataframe(char* title)
 
     return c;
 }
+
+
+int insertion_valeur(FRAME* frame, int value){
+    int nb_val;
+    int num_col;
+    printf("Combien de valeurs voulez-vous ajouter ?");
+    
+}
