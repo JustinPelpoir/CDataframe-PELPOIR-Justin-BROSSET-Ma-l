@@ -26,4 +26,9 @@ int insertion_valeur(FRAME* frame, int value){
         printf("Dans quelle colonne voulez-vous ajouter vos valeurs ?");
         scanf(" %d", &num_col);
     }while(num_col < 0 || num_col > TL);
-}
+    if(frame[i] == NULL){
+        ajouter_colonne();
+        }
+    else{
+        
+    }
