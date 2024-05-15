@@ -28,7 +28,7 @@ int insertion_valeur(FRAME* frame, int value){
         scanf(" %d", &num_col);
     }while(num_col < 0 || num_col > TL);
     if(frame[num_col] == NULL){
-        ajouter_colonne(FRAME* frame);
+        ajouter_colonne(frame);
         }
     else{
         for(int i=0; i<nb_val; i++){
