@@ -37,3 +37,7 @@ int insertion_valeur(FRAME* frame, int value){
             inserer_valeur(frame[num_col], val);
         }
     }
+
+
+
+void ajouter_ligne
