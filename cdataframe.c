@@ -41,5 +41,10 @@ int insertion_valeur(FRAME* frame, int value){
 
 
 void ajouter_ligne(FRAME* frame){
-    for(int i=0 ; i<cdataframe->num
+    for(int i=0 ; i<cdataframe->num_col ; i++){
+        int val;
+        printf("Quelle valeur voulez-vous ajouter ?");
+        scanf(" %d", &val);
+        
+    }
 }
