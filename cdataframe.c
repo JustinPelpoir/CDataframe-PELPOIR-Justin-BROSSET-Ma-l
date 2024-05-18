@@ -95,6 +95,18 @@ void ajouter_colonne(FRAME* frame){
         return 0;
     }
 
-    cdataframe->columns[cdataframe->num_col] = col;
+    frame->col[frame->num_col] = col;
     cdataframe->num_col++;
 }
+
+void print_num_raw(CDataframe* cdataframe) {
+    if (cdataframe == NULL) {
+        printf("ERREUR");
+        exit(EXIT_FAILURE);
+    }
+
+    for (int i = 0; i < cdataframe->num_columns; i++) {
+        printf("Nombre de ligne de la colonne %s : %d", cdataframe->columns[i]->name, cdataframe->columns[i]->TL);
+    }
+}
+
