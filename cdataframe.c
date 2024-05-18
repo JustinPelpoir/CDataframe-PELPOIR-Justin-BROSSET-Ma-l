@@ -41,7 +41,7 @@ int insertion_valeur(FRAME* frame, int value){
 
 
 void ajouter_ligne(FRAME* frame){
-    for(int i=0 ; i<cdataframe->num_col ; i++){
+    for(int i=0 ; i<frame->num_col ; i++){
         int val;
         printf("Quelle valeur voulez-vous ajouter ?");
         scanf(" %d", &val);
@@ -49,4 +49,16 @@ void ajouter_ligne(FRAME* frame){
     }
 }
 
-void supprimer_ligne(
+void supprimer_ligne(FRAME** frame){
+    int n_ligne;
+    do{
+        printf("Quelle ligne voulez-vous supprimer ?");
+        scanf(" %d", &n_ligne);
+    }(while(n_ligne<0);
+
+    for(int i=0 ; i<frame->num_col ; i++){
+        if(n_ligne<frame->col[i]->TL){
+            
+        }
+    }
+}
