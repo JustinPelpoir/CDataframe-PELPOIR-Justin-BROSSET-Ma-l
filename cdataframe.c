@@ -40,6 +40,6 @@ int insertion_valeur(FRAME* frame, int value){
 
 
 
-void ajouter_ligne(FRAME** frame){
-    for(int i=0 ; i<cdataframe->
+void ajouter_ligne(FRAME* frame){
+    for(int i=0 ; i<cdataframe->num
 }
