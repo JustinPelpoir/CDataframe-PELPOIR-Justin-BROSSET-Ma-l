@@ -45,7 +45,7 @@ void ajouter_ligne(FRAME* frame){
         int val;
         printf("Quelle valeur voulez-vous ajouter ?");
         scanf(" %d", &val);
-        insertion_valeur(FRAME* frame, val);
+        insert_value(frame->col[i], val);
     }
 }
 
@@ -76,8 +76,8 @@ void ajouter_colonne(FRAME* frame){
     scanf(" %s", title);
         COLUMN* column = create_column(title);
     if (column == NULL) {
-        printf("ERREUR: Échec de création de colonne\n");
-        exit(EXIT_FAILURE);
+        printf("Désolé, nous n'avons pas pu créer la colonne\n");
+        return 0;
     }
 
     printf("Entrez le nombre de valeurs à insérer dans la colonne: ");
