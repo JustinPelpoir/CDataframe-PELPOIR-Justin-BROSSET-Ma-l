@@ -34,7 +34,7 @@ int insertion_valeur(FRAME* frame, int value){
         for(int i=0; i<nb_val; i++){
             printf("Quelle valeur voulez-vous ajouter");
             scanf(" %d", &val);
-            inserer_valeur(frame[num_col], val);
+            insert_value(frame[num_col], val);
         }
     }
 
