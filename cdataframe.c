@@ -65,3 +65,36 @@ void supprimer_ligne(FRAME** frame){
         }
     }
 }
+
+void ajouter_colonne(FRAME* frame){
+    if(frame==NULL){
+        return 0;
+    }
+    char title[50];
+    int nb_val;
+    printf("Quel est le titre de la colonne ?");
+    scanf(" %s", title);
+        COLUMN* column = create_column(title);
+    if (column == NULL) {
+        printf("ERREUR: Échec de création de colonne\n");
+        exit(EXIT_FAILURE);
+    }
+
+    printf("Entrez le nombre de valeurs à insérer dans la colonne: ");
+    scanf("%d", &nb_val);
+    for (int j = 0; j < nb_val; j++) {
+        int val;
+        printf("Entrez la valeur pour la ligne %d: ", j + 1);
+        scanf("%d", &val);
+        insert_value(column, val);
+    }
+
+    frame->columns = realloc(frame->columns, (frame->num_col + 1) * sizeof(COLUMN*));
+    if (cdataframe->col == NULL) {
+        printf("Désolé, la réallocation de mémoire n'a pas aboutit\n");
+        return 0;
+    }
+
+    cdataframe->columns[cdataframe->num_col] = col;
+    cdataframe->num_col++;
+}
