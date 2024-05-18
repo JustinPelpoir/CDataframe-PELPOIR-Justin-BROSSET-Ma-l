@@ -45,6 +45,8 @@ void ajouter_ligne(FRAME* frame){
         int val;
         printf("Quelle valeur voulez-vous ajouter ?");
         scanf(" %d", &val);
-        
+        insertion_valeur(FRAME* frame, val);
     }
 }
+
+void supprimer_ligne(
