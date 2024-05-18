@@ -58,7 +58,10 @@ void supprimer_ligne(FRAME** frame){
 
     for(int i=0 ; i<frame->num_col ; i++){
         if(n_ligne<frame->col[i]->TL){
-            
+            for(int j=n_ligne ; j<frame->col[i]->TL-1 ; j++){
+                frame->col[i]->data[j]=frame->col[i]->data[j+1];
+            }
+            frame->col[i]->TL--;
         }
     }
 }
