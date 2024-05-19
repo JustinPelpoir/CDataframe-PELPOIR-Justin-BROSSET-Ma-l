@@ -56,7 +56,7 @@ void print_dataframe(FRAME* frame) {
 
 void affichage_ligne(FRAME* frame, int limite) {
     if (limite > frame->TL) {
-        printf("Limite dépasse le nombre total de lignes disponibles.\n");
+        printf("La limite dépasse le nombre total de lignes disponibles.\n");
         return;
     }
 
@@ -75,6 +75,20 @@ void affichage_ligne(FRAME* frame, int limite) {
             }
         }
         printf("\n");
+    }
+}
+
+
+void affichage_colonne(FRAME* frame, int limite) {
+    if (limite > frame->TP) {
+        printf("La limite dépasse le nombre total de colonnes disponibles.\n");
+        return;
+    }
+
+    printf("Affichage des %d premières colonnes :\n", limite);
+    for (int i = 0; i < limite; i++) {
+        printf("Colonne %d (%s) :\n", i, frame->cols[i].titre);
+        print_col(&frame->cols[i]);
     }
 }
 
