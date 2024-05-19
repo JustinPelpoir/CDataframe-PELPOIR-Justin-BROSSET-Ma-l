@@ -47,8 +47,8 @@ void affichage_nom_colonne(FRAME* frame);// A faire
 void affichage_nb_ligne(FRAME* frame);
 void affichage_nb_colonne(FRAME* frame);// A faire
 
-int nb_valeur_egal_frame(FRAME* frame, int valeur);// A faire
-int nb_valeur_superieur_frame(FRAME* frame, int valeur);// A faire
+int nb_valeur_egal_frame(FRAME* frame, int valeur);
+int nb_valeur_superieur_frame(FRAME* frame, int valeur);
 int nb_valeur_inferieur_frame(FRAME* frame, int valeur);
 
 
