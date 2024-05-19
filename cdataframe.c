@@ -201,7 +201,7 @@ void afficher_noms_colonnes(FRAME* frame) {
 }
 
 
-void afficher_nombre_colonnes(FRAME* frame) {
+void afficher_nb_colonne(FRAME* frame) {
     printf("Il y a %d colonnes dans le Dataframe\n", frame->TP);
 
 
@@ -216,7 +216,7 @@ void affichage_nb_ligne(FRAME* frame) {
 }
 
 
-void afficher_lignes(FRAME* frame, int limite) {
+void affichage_ligne(FRAME* frame, int limite) {
     if (limite > frame->TL) {
         printf("Limite dépasse le nombre total de lignes disponibles.\n");
         return;
