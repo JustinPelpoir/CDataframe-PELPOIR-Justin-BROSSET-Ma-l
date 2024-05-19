@@ -101,16 +101,6 @@ void ajouter_colonne(FRAME* frame){
     cdataframe->num_col++;
 }
 
-void affichage_nb_ligne(FRAME* frame) {
-    if (frame == NULL) {
-        return 0;
-    }
-
-    for (int i = 0; i < frame->num_col; i++) {
-        printf("Il y a %d lignes dans cette colonne.", cdataframe->col[i]->TL);
-    }
-}
-
 void delete_column(FRAME* frame) {
     int n_col;
     do {
@@ -135,6 +125,16 @@ void delete_column(FRAME* frame) {
 
     // Réduire le nombre de colonnes dans le dataframe
     frame->num_col--;
+}
+
+void affichage_nb_ligne(FRAME* frame) {
+    if (frame == NULL) {
+        return 0;
+    }
+
+    for (int i = 0; i < frame->num_col; i++) {
+        printf("Il y a %d lignes dans cette colonne.", cdataframe->col[i]->TL);
+    }
 }
 
 int nb_valeur_inferieur_frame(FRAME* frame, int valeur){
