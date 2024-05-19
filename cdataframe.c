@@ -40,6 +40,20 @@ void insertion_valeur(FRAME* frame) {
 }
 
 
+void print_dataframe(FRAME* frame) {
+    printf("Titre: %s\n", frame->titre);
+    for (int col = 0; col < frame->TP; col++) {
+        printf("Colonne %d: ", frame->num_col[col]);
+        if (frame->T[col] != NULL) {
+            for (int row = 0; row < frame->TL; row++) {
+                printf("%d ", frame->T[col][row]);
+            }
+        }
+        printf("\n");
+    }
+}
+
+
 void ajouter_ligne(FRAME* frame){
     for(int i=0 ; i<frame->num_col ; i++){
         int val;
