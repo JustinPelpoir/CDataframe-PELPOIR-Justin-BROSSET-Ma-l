@@ -99,14 +99,39 @@ void ajouter_colonne(FRAME* frame){
     cdataframe->num_col++;
 }
 
-void print_num_raw(CDataframe* cdataframe) {
-    if (cdataframe == NULL) {
-        printf("ERREUR");
-        exit(EXIT_FAILURE);
+void affichage_nb_ligne(FRAME* frame) {
+    if (frame == NULL) {
+        return 0;
     }
 
-    for (int i = 0; i < cdataframe->num_columns; i++) {
-        printf("Nombre de ligne de la colonne %s : %d", cdataframe->columns[i]->name, cdataframe->columns[i]->TL);
+    for (int i = 0; i < frame->num_col; i++) {
+        printf("Il y a %d lignes dans cette colonne.", cdataframe->columns[i]->TL);
     }
+}
+
+void delete_column(FRAME* frame) {
+    int n_col;
+    do {
+        printf("Quel est le numero de la colonne à supprimer ? ");
+        scanf("%d", &n_col);
+    } while (n_col < 0);
+
+    if (frame == NULL || n_col < 0) {
+        return 0;
+    } else if (n_col >= frame->num_col) {
+        printf("Désolé, colonne non trouvé");
+        return 0;
+    }
+
+    // Libérer la mémoire allouée pour la colonne à l'index spécifié
+    delete_column(&(frame->col[n_col]));
+
+    // Décaler les colonnes restantes vers la gauche pour remplir l'espace laissé par la suppression
+    for (int i = n_col; i < frame->num_col - 1; i++) {
+        frame->col[i] = frame->col[i + 1];
+    }
+
+    // Réduire le nombre de colonnes dans le dataframe
+    frame->num_col--;
 }
 
