@@ -198,7 +198,7 @@ int nb_valeur_superieur_frame(FRAME* frame, int valeur){
     }
 }
 
-int nb_valeur_egale_frame(FRAME* frame, int valeur){
+int nb_valeur_egal_frame(FRAME* frame, int valeur){
     int cpt=0;
     if(frame==NULL){
         return 0;
