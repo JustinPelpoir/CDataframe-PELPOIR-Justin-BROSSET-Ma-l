@@ -74,8 +74,8 @@ void ajouter_colonne(FRAME* frame){
     int nb_val;
     printf("Quel est le titre de la colonne ?");
     scanf(" %s", title);
-        COLUMN* column = create_column(title);
-    if (column == NULL) {
+    COLUMN* col = create_column(title);
+    if (col == NULL) {
         printf("Désolé, nous n'avons pas pu créer la colonne\n");
         return 0;
     }
@@ -86,11 +86,11 @@ void ajouter_colonne(FRAME* frame){
         int val;
         printf("Entrez la valeur pour la ligne %d: ", j + 1);
         scanf("%d", &val);
-        insert_value(column, val);
+        insert_value(col, val);
     }
 
-    frame->columns = realloc(frame->columns, (frame->num_col + 1) * sizeof(COLUMN*));
-    if (cdataframe->col == NULL) {
+    frame->col = realloc(frame->col, (frame->num_col + 1) * sizeof(COLUMN*));
+    if (frame->col == NULL) {
         printf("Désolé, la réallocation de mémoire n'a pas aboutit\n");
         return 0;
     }
