@@ -141,6 +141,6 @@ int nb_valeur_inferieur_frame(FRAME* frame, int valeur){
         return 0;
     }
     for(int i=0 ; i<frame->num_col ; i++){
-        ct+=reseatche in
+        ct+=valeurs_inferieures(frame->col[i], valeur);
     }
 }
