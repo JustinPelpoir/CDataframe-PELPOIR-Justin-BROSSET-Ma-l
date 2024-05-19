@@ -197,3 +197,13 @@ int nb_valeur_superieur_frame(FRAME* frame, int valeur){
         cpt+=valeurs_superieures(frame->col[i], valeur);
     }
 }
+
+int nb_valeur_egale_frame(FRAME* frame, int valeur){
+    int cpt=0;
+    if(frame==NULL){
+        return 0;
+    }
+    for(int i=0 ; i<frame->num_col ; i++){
+        cpt+=valeurs_egales(frame->col[i], valeur);
+    }
+}
