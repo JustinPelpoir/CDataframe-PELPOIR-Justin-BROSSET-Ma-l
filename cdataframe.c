@@ -193,6 +193,13 @@ void remplacer_case(FRAME* frame, int col, int row, int val) {
     frame->T[col][row] = nouvelle_valeur;
 }
 
+void afficher_noms_colonnes(FRAME* frame) {
+    printf("Voici les noms des colonnes :\n");
+    for (int i = 0; i < frame->TP; i++) {
+        printf("Colonne %d : %s\n", i, frame->titre[i]);
+    }
+}
+
 void affichage_nb_ligne(FRAME* frame) {
     if (frame == NULL) {
         return;
