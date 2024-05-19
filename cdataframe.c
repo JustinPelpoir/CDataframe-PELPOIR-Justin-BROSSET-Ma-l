@@ -135,3 +135,12 @@ void delete_column(FRAME* frame) {
     frame->num_col--;
 }
 
+int nb_valeur_inferieur_frame(FRAME* frame, int valeur){
+    int ct=0;
+    if(frame==NULL){
+        return 0;
+    }
+    for(int i=0 ; i<frame->num_col ; i++){
+        ct+=reseatche in
+    }
+}
