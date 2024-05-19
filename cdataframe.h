@@ -6,7 +6,7 @@
 // Définition d'une structure : Tableau de colonne de donnée
 typedef struct{
     char *titre;
-    int *T;
+    int **T;
     int TL;
     int TP;
     int *num_col;
