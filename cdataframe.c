@@ -151,6 +151,22 @@ void renommer_colonne(FRAME* frame, int col, const char* nouveau_nom) {
     frame->titre[col] = strdup(nouveau_nom); // Duplique le nouveau nom
 }
 
+// Fonction pour rechercher une valeur dans le DataFrame
+void recherche_valeur(FRAME* frame, int valeur) {
+    int trouve = 0;
+    for (int col = 0; col < frame->TP; col++) {
+        for (int row = 0; row < frame->TL; row++) {
+            if (frame->T[col][row] == valeur) {
+                printf("Valeur %d trouvée à la colonne %d (%s), ligne %d\n", valeur, col, frame->titre[col], row);
+                trouve = 1;
+            }
+        }
+    }
+
+    if (!trouve) {
+        printf("Valeur %d non trouvée dans le DataFrame.\n", valeur);
+    }
+}
 
 void affichage_nb_ligne(FRAME* frame) {
     if (frame == NULL) {
