@@ -5,23 +5,21 @@
 #define REALOC_SIZE 256
 
 // Création d'un dataframe
-FRAME *create_dataframe(char* title)
-{
-    FRAME *c = (FRAME*)malloc(sizeof(FRAME));
-    c-> titre = title;
-    c-> TL = 0;
-    c-> TP = 0;
-    c-> T = NULL;
-    c-> num_col = NULL;
-    c-> num_ligne = NULL;
+FRAME* create_dataframe(char* title) {
+    FRAME* c = (FRAME*)malloc(sizeof(FRAME));
+    c->titre = strdup(title); // Duplique le titre pour éviter les problèmes de mémoire
+    c->TL = 0;
+    c->TP = 0;
+    c->T = NULL;
+    c->num_col = NULL;
+    c->num_ligne = NULL;
 
     return c;
 }
 
 
-int insertion_valeur(FRAME* frame, int value){
+int insertion_valeur(FRAME* frame, int value){// A revoir
     int nb_val;
-    int num_col = -1;
     int val;
     printf("Combien de valeurs voulez-vous ajouter ?");
     scanf(" %d", &nb_val);
