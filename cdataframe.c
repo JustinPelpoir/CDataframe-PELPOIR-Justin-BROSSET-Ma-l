@@ -12,6 +12,8 @@ FRAME *create_dataframe(char* title)
     c-> TL = 0;
     c-> TP = 0;
     c-> T = NULL;
+    c-> num_col = NULL;
+    c-> num_ligne = NULL;
 
     return c;
 }
