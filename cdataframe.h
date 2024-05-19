@@ -41,7 +41,7 @@ void renommer_colonne(FRAME* frame);
 void recherche_valeur(FRAME* frame, int valeur);
 
 void affichage_case(FRAME* frame, int col, int row);
-void remplacer_case(FRAME* frame);// A faire
+void remplacer_case(FRAME* frame);
 
 void affichage_nom_colonne(FRAME* frame);// A faire
 void affichage_nb_ligne(FRAME* frame);
