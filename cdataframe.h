@@ -20,7 +20,7 @@ FRAME* create_dataframe(char* title);
 /* Insérer une valeur : la fonction demandera à l'utilisateur combien de valeurs à ajouter et dans quelle colonne
   Si la colonne demandée n'existe pas, la fonction fera appelle à la fonction "ajouter_colonne" pour la mettre en place
 */
-int insertion_valeur(FRAME* frame, int value);
+int insertion_valeur(FRAME* frame);
 
 
 
