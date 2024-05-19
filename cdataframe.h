@@ -38,7 +38,7 @@ void supprimer_ligne(FRAME** frame);
 void supprimer_colonne(FRAME** frame);
 
 void renommer_colonne(FRAME* frame);
-void recherche_valeur(FRAME* frame, int valeur);// A faire
+void recherche_valeur(FRAME* frame, int valeur);
 
 void affichage_case(FRAME* frame);// A faire
 void remplacer_case(FRAME* frame);// A faire
