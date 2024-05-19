@@ -200,6 +200,11 @@ void afficher_noms_colonnes(FRAME* frame) {
     }
 }
 
+
+void afficher_nombre_colonnes(FRAME* frame) {
+    printf("Il y a %d colonnes dans le Dataframe\n", frame->TP);
+
+
 void affichage_nb_ligne(FRAME* frame) {
     if (frame == NULL) {
         return;
