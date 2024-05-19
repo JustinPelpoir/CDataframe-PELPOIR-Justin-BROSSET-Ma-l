@@ -113,7 +113,7 @@ void ajouter_colonne(FRAME* frame){
     frame->num_col++;
 }
 
-void delete_column(FRAME* frame) {
+void supprimer_colonne(FRAME* frame) {
     int n_col;
     do {
         printf("Quel est le numero de la colonne à supprimer ? ");
@@ -138,6 +138,19 @@ void delete_column(FRAME* frame) {
     // Réduire le nombre de colonnes dans le dataframe
     frame->num_col--;
 }
+
+
+// Fonction pour renommer une colonne
+void renommer_colonne(FRAME* frame, int col, const char* nouveau_nom) {
+    if (col < 0 || col >= frame->TP) {
+        printf("Index de colonne invalide.\n");
+        return;
+    }
+
+    free(frame->titre[col]); // Libère l'ancien nom
+    frame->titre[col] = strdup(nouveau_nom); // Duplique le nouveau nom
+}
+
 
 void affichage_nb_ligne(FRAME* frame) {
     if (frame == NULL) {
