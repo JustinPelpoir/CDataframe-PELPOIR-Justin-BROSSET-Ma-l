@@ -35,7 +35,7 @@ void affichage_colonne(FRAME* frame);// A faire
 void ajouter_ligne(FRAME* frame);
 void ajouter_colonne(FRAME* frame);
 void supprimer_ligne(FRAME** frame);
-void supprimer_colonne(FRAME** frame);// A faire
+void supprimer_colonne(FRAME** frame);
 
 void renommer_colonne(FRAME* frame);// A faire
 void recherche_valeur(FRAME* frame, int valeur);// A faire
