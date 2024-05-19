@@ -25,7 +25,7 @@ int insertion_valeur(FRAME* frame);
 
 
 // Affichages :
-void affichage_dataframe(FRAME* frame); // A faire
+void affichage_dataframe(FRAME* frame);
 void affichage_ligne(FRAME* frame);// A faire
 void affichage_colonne(FRAME* frame);// A faire
 
@@ -37,7 +37,7 @@ void ajouter_colonne(FRAME* frame);
 void supprimer_ligne(FRAME** frame);
 void supprimer_colonne(FRAME** frame);
 
-void renommer_colonne(FRAME* frame);// A faire
+void renommer_colonne(FRAME* frame);
 void recherche_valeur(FRAME* frame, int valeur);// A faire
 
 void affichage_case(FRAME* frame);// A faire
