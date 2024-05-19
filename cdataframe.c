@@ -31,15 +31,15 @@ int insertion_valeur(FRAME* frame, int value){
     }while(num_col < 0 || num_col > TL);
     if(frame->num_col == NULL){
         ajouter_colonne(FRAME* frame);
-        }
+    }
     else{
         for(int i=0; i<nb_val; i++){
             printf("Quelle valeur voulez-vous ajouter");
             scanf(" %d", &val);
-            insert_value(frame[num_col], val);
+            insert_value(frame->num_col, val);
         }
     }
-
+}
 
 
 void ajouter_ligne(FRAME* frame){
@@ -98,7 +98,7 @@ void ajouter_colonne(FRAME* frame){
     }
 
     frame->col[frame->num_col] = col;
-    cdataframe->num_col++;
+    frame->num_col++;
 }
 
 void delete_column(FRAME* frame) {
@@ -133,7 +133,7 @@ void affichage_nb_ligne(FRAME* frame) {
     }
 
     for (int i = 0; i < frame->num_col; i++) {
-        printf("Il y a %d lignes dans cette colonne.", cdataframe->col[i]->TL);
+        printf("Il y a %d lignes dans cette colonne.", frame->col[i]->TL);
     }
 }
 
