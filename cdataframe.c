@@ -215,6 +215,32 @@ void affichage_nb_ligne(FRAME* frame) {
     }
 }
 
+
+void afficher_lignes(FRAME* frame, int limite) {
+    if (limite > frame->TL) {
+        printf("Limite dépasse le nombre total de lignes disponibles.\n");
+        return;
+    }
+
+    printf("Affichage des %d premières lignes :\n", limite);
+    for (int i = 0; i < frame->TP; i++) {
+        printf("%s\t", frame->titre[i]);
+    }
+    printf("\n");
+
+    for (int i = 0; i < limite; i++) {
+        for (int j = 0; j < frame->TP; j++) {
+            if (i < frame->TL && frame->T[j] != NULL && i < frame->TL) {
+                printf("%d\t", frame->T[j][i]);
+            } else {
+                printf("\t");
+            }
+        }
+        printf("\n");
+    }
+}
+
+
 int nb_valeur_inferieur_frame(FRAME* frame, int valeur){
     int cpt=0;
     if(frame==NULL){
