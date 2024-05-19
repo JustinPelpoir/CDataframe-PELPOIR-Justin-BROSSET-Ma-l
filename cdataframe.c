@@ -18,24 +18,24 @@ FRAME* create_dataframe(char* title) {
 }
 
 
-int insertion_valeur(FRAME* frame, int value){// A revoir
+// Fonction pour insérer des valeurs dans une colonne du DataFrame
+void insertion_valeur(FRAME* frame) {
     int nb_val;
     int val;
-    printf("Combien de valeurs voulez-vous ajouter ?");
-    scanf(" %d", &nb_val);
-    do{
-        printf("Dans quelle colonne voulez-vous ajouter vos valeurs ?");
-        scanf(" %d", &num_col);
-    }while(num_col < 0 || num_col > TL);
-    if(frame->num_col == NULL){
-        ajouter_colonne(FRAME* frame);
+    int num_col;
+    printf("Combien de valeurs voulez-vous ajouter ? ");
+    scanf("%d", &nb_val);
+    do {
+        printf("Dans quelle colonne voulez-vous ajouter vos valeurs ? ");
+        scanf("%d", &num_col);
+    } while (num_col < 0 || num_col >= frame->TP);
+    if (frame->num_col == NULL || frame->TP == 0) {
+        ajouter_colonne(frame);
     }
-    else{
-        for(int i=0; i<nb_val; i++){
-            printf("Quelle valeur voulez-vous ajouter");
-            scanf(" %d", &val);
-            insert_value(frame->num_col, val);
-        }
+    for (int i = 0; i < nb_val; i++) {
+        printf("Quelle valeur voulez-vous ajouter ? ");
+        scanf("%d", &val);
+        insert_value(frame, num_col, val);
     }
 }
 
