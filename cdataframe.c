@@ -105,7 +105,7 @@ void affichage_nb_ligne(FRAME* frame) {
     }
 
     for (int i = 0; i < frame->num_col; i++) {
-        printf("Il y a %d lignes dans cette colonne.", cdataframe->columns[i]->TL);
+        printf("Il y a %d lignes dans cette colonne.", cdataframe->col[i]->TL);
     }
 }
 
