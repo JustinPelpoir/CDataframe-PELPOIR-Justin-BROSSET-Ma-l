@@ -5,15 +5,15 @@
 
 // Définition d'une structure : Tableau de colonne de donnée
 typedef struct{
-    char *titre;
-    int **T;
+    char* titre;
+    int** T;
     int TL;
     int TP;
-    int *num_col;
-    int *num_ligne;
+    int* num_col;
+    int* num_ligne;
 } FRAME;
 
-FRAME *create_dataframe(char* title);
+FRAME* create_dataframe(char* title);
 
 
 
