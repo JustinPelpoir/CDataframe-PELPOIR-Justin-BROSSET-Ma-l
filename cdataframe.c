@@ -54,6 +54,31 @@ void print_dataframe(FRAME* frame) {
 }
 
 
+void affichage_ligne(FRAME* frame, int limite) {
+    if (limite > frame->TL) {
+        printf("Limite dépasse le nombre total de lignes disponibles.\n");
+        return;
+    }
+
+    printf("Affichage des %d premières lignes :\n", limite);
+    for (int i = 0; i < frame->TP; i++) {
+        printf("%s\t", frame->titre[i]);
+    }
+    printf("\n");
+
+    for (int i = 0; i < limite; i++) {
+        for (int j = 0; j < frame->TP; j++) {
+            if (i < frame->TL && frame->T[j] != NULL && i < frame->TL) {
+                printf("%d\t", frame->T[j][i]);
+            } else {
+                printf("\t");
+            }
+        }
+        printf("\n");
+    }
+}
+
+
 void ajouter_ligne(FRAME* frame){
     for(int i=0 ; i<frame->num_col ; i++){
         int val;
@@ -216,29 +241,6 @@ void affichage_nb_ligne(FRAME* frame) {
 }
 
 
-void affichage_ligne(FRAME* frame, int limite) {
-    if (limite > frame->TL) {
-        printf("Limite dépasse le nombre total de lignes disponibles.\n");
-        return;
-    }
-
-    printf("Affichage des %d premières lignes :\n", limite);
-    for (int i = 0; i < frame->TP; i++) {
-        printf("%s\t", frame->titre[i]);
-    }
-    printf("\n");
-
-    for (int i = 0; i < limite; i++) {
-        for (int j = 0; j < frame->TP; j++) {
-            if (i < frame->TL && frame->T[j] != NULL && i < frame->TL) {
-                printf("%d\t", frame->T[j][i]);
-            } else {
-                printf("\t");
-            }
-        }
-        printf("\n");
-    }
-}
 
 
 int nb_valeur_inferieur_frame(FRAME* frame, int valeur){
