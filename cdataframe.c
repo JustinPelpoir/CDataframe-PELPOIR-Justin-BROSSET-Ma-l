@@ -168,9 +168,21 @@ void recherche_valeur(FRAME* frame, int valeur) {
     }
 }
 
+void affichage_case(FRAME* frame, int col, int row) {
+    if (col < 0 || col >= frame->TP) {
+        printf("Désolé, l'index de la colonne est invalide.\n");
+        return;
+    }
+    if (row < 0 || row >= frame->TL) {
+        printf("Désolé, l'index de la ligne est invalide.\n");
+        return;
+    }
+    printf("Valeur à la colonne %d (%s), ligne %d: %d\n", frame->num_col[col], frame->titre[col], frame->num_ligne[row], frame->T[col][row]);
+}
+
 void affichage_nb_ligne(FRAME* frame) {
     if (frame == NULL) {
-        return 0;
+        return;
     }
 
     for (int i = 0; i < frame->num_col; i++) {
