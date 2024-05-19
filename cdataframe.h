@@ -40,7 +40,7 @@ void supprimer_colonne(FRAME** frame);
 void renommer_colonne(FRAME* frame);
 void recherche_valeur(FRAME* frame, int valeur);
 
-void affichage_case(FRAME* frame);// A faire
+void affichage_case(FRAME* frame);
 void remplacer_case(FRAME* frame);// A faire
 
 void affichage_nom_colonne(FRAME* frame);// A faire
