@@ -9,9 +9,8 @@ typedef struct{
     int *T;
     int TL;
     int TP;
-    int n_col;
-    int n_ligne;
-    int *col;
+    int *n_col;
+    int *n_ligne;
 } FRAME;
 
 FRAME *create_dataframe(char* title);
