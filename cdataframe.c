@@ -68,7 +68,7 @@ void remplir_dataframe_en_dur(FRAME* frame) {
 
 
 // Fonction pour afficher le DataFrame
-void print_dataframe(FRAME* frame) {
+void affichage_dataframe(FRAME* frame) {
     printf("Titre: %s\n", frame->titre);
     for (int col = 0; col < frame->TP; col++) {
         printf("Colonne %d: ", frame->num_col[col]);
@@ -266,7 +266,7 @@ void remplacer_case(FRAME* frame, int col, int row, int val) {
 }
 
 // Fonction pour afficher les noms des colonnes du DataFrame
-void afficher_noms_colonnes(FRAME* frame) {
+void affichage_noms_colonnes(FRAME* frame) {
     printf("Voici les noms des colonnes :\n");
     for (int i = 0; i < frame->TP; i++) {
         printf("Colonne %d : %s\n", i, frame->titre[i]);
