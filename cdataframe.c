@@ -5,11 +5,13 @@
 #include "cdataframe.h"
 #define REALOC_SIZE 256
 
+
+
 // Création d'un dataframe
 FRAME* create_dataframe(char* title) {
     FRAME* c = (FRAME*)malloc(sizeof(FRAME));
     c->titre = strdup(title); // Duplique le titre pour éviter les problèmes de mémoire
-    c->TL = 0; // Initialisation de la taille logique (nombre de lignes)
+    c->TL = 0; // Initialisation de la taille logique
     c->TP = 0; // Initialisation de la taille physique (nombre de colonnes)
     c->T = NULL; // Tableau des données (tableau de tableaux)
     c->num_col = NULL; // Pointeur vers les numéros de colonnes
