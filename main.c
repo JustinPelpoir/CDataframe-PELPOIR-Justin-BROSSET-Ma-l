@@ -3,30 +3,15 @@
 #include <stdio.h>
 #include "cdataframe.h"
 
-
-/** 
-int main()
-{
-    int value;
-    COLUMN *c;
-
-    printf("Valeur : ");
-    scanf("%d", &value);
-
-    c = create_column("c1");
-    insert_value(c, value);
-
-    print_col(c);
-
-    delete_column(&c);
-
-    return 0;
-}
-**/
-
 int main() {
+    int boucle=1;
     int choix ;
-    do while {
+    int val;
+    int limite;
+    int col;
+    int row;
+    char nouveau_nom[50];
+    do{
         // Affichage du menu
         printf("\n----------Menu Principal----------\n");
         printf("Bienvenue dans le menu principal,\nQuelle est votre requête ?\n\n");
@@ -42,7 +27,7 @@ int main() {
         printf("10. Rechercher une valeur\n");
         printf("11. Afficher une case\n");
         printf("12. Remplacer une case\n");
-        printf("13. Afficher le nom d'une colonne\n");
+        printf("13. Afficher les noms des colonnes\n");
         printf("14. Afficher le nombre de lignes\n");
         printf("15. Afficher le nombre de colonnes\n");
         printf("16. Afficher le nombre de cellules contenant une valeur égale à une valeur donnée\n");
@@ -52,60 +37,100 @@ int main() {
         printf("Choix : ");
         scanf("%d", &choix);
         if(choix==1){
-            int insertion_valeur(FRAME* frame, int value);
+            void insertion_valeur(frame);
         }
         if(choix==2){
-            void affichage_dataframe(FRAME* frame);
+            void affichage_dataframe(frame);
         }
         if(choix==3){
-            void affichage_ligne(FRAME* frame);
+            printf("Jusqu'à quelle ligne voulez-vous afficher votre dataframe ?");
+            scanf("%d", &limite);
+            void affichage_ligne(frame, limite);
         }
         if(choix==4){
-            void affichage_colonne(FRAME* frame);
+            printf("Jusqu'à quelle colonne voulez-vous afficher votre dataframe ?");
+            scanf("%d", &limite);
+            void affichage_colonne(frame, limite);
         }
         if(choix==5){
-            void ajouter_ligne(FRAME* frame);
+            void ajouter_ligne(frame);
         }
         if(choix==6){
-            void ajouter_colonne(FRAME* frame);
+            void ajouter_colonne(frame);
         }
         if(choix==7){
-            void supprimer_ligne(FRAME** frame);
+            void supprimer_ligne(frame);
         }
         if(choix==8){
-            void supprimer_colonne(FRAME** frame);
+            void supprimer_colonne(frame);
         }
         if(choix==9){
-            void renommer_colonne(FRAME* frame);
+            printf("Quelle colonne voulez-vous renommer ?");
+            scanf("%d", &col);
+            printf("Comment voulez-vous la renommer ?");
+            scanf("%s", nouveau_nom);
+            void renommer_colonne(frame, col, nouveau_nom);
         }
         if(choix==10){
-            void recherche_valeur(FRAME* frame, int valeur);
+            printf("Quelle valeur voulez-vous rechercher ?");
+            scanf("%d", val);
+            void recherche_valeur(frame, int val);
         }
         if(choix==11){
-            void affichage_case(FRAME* frame);
+            printf("Dans quelle colonne se situe la case que vous voulez afficher ?");
+            scanf("%d", &col);
+            printf("Dans quelle ligne se situe la case que vous voulez afficher ?");
+            scanf("%d", &row);
+            void affichage_case(frame, col, row);
         }
         if(choix==12){
-            void remplacer_case(FRAME* frame);
+            printf("Dans quelle colonne se situe la case que vous voulez remplacer ?");
+            scanf("%d", &col);
+            printf("Dans quelle ligne se situe la case que vous voulez remplacer ?");
+            scanf("%d", &row);
+            printf("Quelle valeur voulez-vous mettre dans cette case ?");
+            scanf("%d", &val);
+            void remplacer_case(frame, col, row, val);
         }
         if(choix==13){
-            void affichage_nom_colonne(FRAME* frame);
+            void affichage_nom_colonne(frame);
         }
         if(choix==14){
-            void affichage_nb_ligne(FRAME* frame);
+            void affichage_nb_ligne(frame);
         }
         if(choix==15){
-            void affichage_nb_colonne(FRAME* frame);
+            void affichage_nb_colonne(frame);
         }
         if(choix==16){
-            int nb_valeur_egal_frame(FRAME* frame, int valeur);
+            printf("Quelle valeur voulez-vous pour faire cette recherche ?");
+            scanf("%d", &val);
+            int nb_valeur_egal_frame(frame, valeur);
         }
         if(choix==17){
-            int nb_valeur_superieur_frame(FRAME* frame, int valeur);
+            printf("Quelle valeur voulez-vous pour faire cette recherche ?");
+            scanf("%d", &val);
+            int nb_valeur_superieur_frame(frame, valeur);
         }
         if(choix==18){
-            int nb_valeur_inferieur_frame(FRAME* frame, int valeur);
+            printf("Quelle valeur voulez-vous pour faire cette recherche ?");
+            scanf("%d", &val);
+            int nb_valeur_inferieur_frame(frame, valeur);
         }
         if(choix==19){
             printf("Merci d'avoir utilisé notre service\nAu plaisir de vous revoir !\n");
-            return 0;
+            boucle=0;
+            // Libère la mémoire du dataframe
+            for (int i = 0; i < dataframe->TP; i++) {
+                free(dataframe->titre[i]);
+                free(dataframe->cols[i]->titre);
+                free(dataframe->cols[i]->T);
+                free(dataframe->cols[i]);
+            }
+            free(dataframe->cols);
+            free(dataframe->titre);
+            free(dataframe);
         }
+        else{
+            printf("Désolé cette commande n'existe pas, veuillez réessayer... \n");
+        }
+    }while(boucle==1)
