@@ -119,7 +119,7 @@ int main() {
         if(choix==19){
             printf("Merci d'avoir utilisé notre service\nAu plaisir de vous revoir !\n");
             boucle=0;
-            // Libère la mémoire du dataframe
+            // Liberer la mémoire du dataframe
             for (int i = 0; i < dataframe->TP; i++) {
                 free(dataframe->titre[i]);
                 free(dataframe->cols[i]->titre);
