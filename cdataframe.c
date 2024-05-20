@@ -1,3 +1,6 @@
+// Projet CDataframe par Justin PELPOIR et Maël BROSSET
+// Ce fichier est le fichier cdataframe qui contient les fonctions relatives à la création et gestion de dataframes. Il fait appelle au fichier column.c 
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
