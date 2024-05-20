@@ -5,7 +5,7 @@
 #include "cdataframe.h"
 #define REALOC_SIZE 256
 
-
+/* ############################ Alimentation ############################ */
 
 // Création d'un dataframe
 FRAME* create_dataframe(char* title) {
@@ -64,6 +64,9 @@ void remplir_dataframe_en_dur(FRAME* frame) {
 }
 
 
+/* ############################ Affichage ############################ */
+
+
 // Fonction pour afficher le DataFrame
 void print_dataframe(FRAME* frame) {
     printf("Titre: %s\n", frame->titre);
@@ -116,6 +119,10 @@ void affichage_colonne(FRAME* frame, int limite) {
         print_col(&frame->cols[i]); // Affiche les valeurs de la colonne
     }
 }
+
+
+/* ############################ Opérations Usuelles ############################ */
+
 
 // Fonction pour ajouter une ligne au DataFrame
 void ajouter_ligne(FRAME* frame) {
@@ -265,6 +272,10 @@ void afficher_noms_colonnes(FRAME* frame) {
         printf("Colonne %d : %s\n", i, frame->titre[i]);
     }
 }
+
+
+/* ############################ Analyse et statistiques ############################ */
+
 
 // Fonction pour afficher le nombre de colonnes du DataFrame
 void afficher_nb_colonne(FRAME* frame) {
