@@ -13,22 +13,16 @@ typedef struct{
     int* num_ligne;
 } FRAME;
 
+// Alimentation :
 FRAME* create_dataframe(char* title);
-
-
-
-/* Insérer une valeur : la fonction demandera à l'utilisateur combien de valeurs à ajouter et dans quelle colonne
-  Si la colonne demandée n'existe pas, la fonction fera appelle à la fonction "ajouter_colonne" pour la mettre en place
-*/
-int insertion_valeur(FRAME* frame);
-
+void insertion_valeur(FRAME* frame);
+void remplir_dataframe_en_dur(FRAME* frame);
 
 
 // Affichages :
 void affichage_dataframe(FRAME* frame);
-void affichage_ligne(FRAME* frame);// A faire
-void affichage_colonne(FRAME* frame);// A faire
-
+void affichage_ligne(FRAME* frame, int limite);
+void affichage_colonne(FRAME* frame, int limite);
 
 
 // Opérations usuelles :
@@ -37,15 +31,15 @@ void ajouter_colonne(FRAME* frame);
 void supprimer_ligne(FRAME** frame);
 void supprimer_colonne(FRAME** frame);
 
-void renommer_colonne(FRAME* frame);
+void renommer_colonne(FRAME* frame, int col, const char* nouveau_nom);
 void recherche_valeur(FRAME* frame, int valeur);
 
 void affichage_case(FRAME* frame, int col, int row);
-void remplacer_case(FRAME* frame);
+void remplacer_case(FRAME* frame, int col, int row, int val);
 
-void affichage_nom_colonne(FRAME* frame);// A faire
+void affichage_noms_colonnes(FRAME* frame);
 void affichage_nb_ligne(FRAME* frame);
-void affichage_nb_colonne(FRAME* frame);// A faire
+void affichage_nb_colonne(FRAME* frame);
 
 int nb_valeur_egal_frame(FRAME* frame, int valeur);
 int nb_valeur_superieur_frame(FRAME* frame, int valeur);
