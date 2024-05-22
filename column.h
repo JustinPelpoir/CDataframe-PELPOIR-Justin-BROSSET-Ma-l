@@ -1,3 +1,11 @@
+//
+// Created by maelb on 21/05/2024.
+//
+
+#ifndef CDATAFRAME_COLUMN_H
+#define CDATAFRAME_COLUMN_H
+
+
 
 
 #ifndef PROJET_C_DATAFRAME_COLUMN_H
@@ -7,6 +15,7 @@
 typedef struct{
     char *titre;
     int *T;
+    int* data;
     int TL;
     int TP;
 } COLUMN;
@@ -25,3 +34,6 @@ int valeurs_inferieures(COLUMN *col, int valeur);
 int valeurs_egales(COLUMN *col, int valeur);
 
 #endif //PROJET_C_DATAFRAME_COLUMN_H
+
+
+#endif //CDATAFRAME_COLUMN_H
