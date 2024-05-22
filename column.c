@@ -1,3 +1,7 @@
+//
+// Created by maelb on 21/05/2024.
+//
+
 // Projet CDataframe par Justin PELPOIR et Maël BROSSET
 // Ce fichier est le fichier column qui contient les fonctions relatives à la création et gestion des colonnes de données
 
@@ -14,6 +18,7 @@ COLUMN *create_column(char* title)
     c-> TL = 0;
     c-> TP = 0;
     c-> T = NULL;
+    c-> data = NULL;
 
     return c;
 }
@@ -63,7 +68,7 @@ void print_col(COLUMN* col)
     if(col-> TL == 0)
         printf("La colonne %s est vide", col->titre);
 
-    // Si la colonne n'est pas vide -> affichage une par une des valeurs
+        // Si la colonne n'est pas vide -> affichage une par une des valeurs
     else
         for(int i=0; i < col-> TL; i++)
         {
@@ -97,7 +102,7 @@ int valeur_position(COLUMN *col, int position)
     if (position >= col->TL)
         printf("Cette position n'existe pas");
 
-    // La position existe dans la colonne : extraire la valeur à cette position dans la colonne
+        // La position existe dans la colonne : extraire la valeur à cette position dans la colonne
     else
     {
         valeur = col-> T[position];
