@@ -1,5 +1,6 @@
 
 #ifndef PROJET_C_DATAFRAME_CDATAFRAME_H
+#include "column.h"
 #define PROJET_C_DATAFRAME_CDATAFRAME_H
 
 // Définition d'une structure : Tableau de colonne de donnée
