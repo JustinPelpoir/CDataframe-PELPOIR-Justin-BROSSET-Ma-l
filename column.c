@@ -1,9 +1,3 @@
-//
-// Created by maelb on 21/05/2024.
-//
-
-// Projet CDataframe par Justin PELPOIR et Maël BROSSET
-// Ce fichier est le fichier column qui contient les fonctions relatives à la création et gestion des colonnes de données
 
 #include "column.h"
 #include <stdlib.h>
