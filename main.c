@@ -1,5 +1,3 @@
-// Projet CDataframe par Justin PELPOIR et Maël BROSSET
-// Ce fichier est le fichier main qui exécute tous les autres fichiers
 
 #include "column.h"
 #include "cdataframe.h"
