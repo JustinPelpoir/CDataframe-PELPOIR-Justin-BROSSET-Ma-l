@@ -1,12 +1,10 @@
+//
+// Created by maelb on 21/05/2024.
+//
 
 #ifndef CDATAFRAME_COLUMN_H
 #define CDATAFRAME_COLUMN_H
 
-
-
-
-#ifndef PROJET_C_DATAFRAME_COLUMN_H
-#define PROJET_C_DATAFRAME_COLUMN_H
 
 // Définition d'une structure : Colonne de donnée
 typedef struct{
@@ -26,11 +24,9 @@ void print_col(COLUMN* col);
 int occurence_colonne(COLUMN* col, int value);
 
 int valeur_position(COLUMN *col, int position);
-int valeurs_superieures(COLUMN *col, int valeur);
+int valeurs_superieures(COLUMN* col, int valeur);
 int valeurs_inferieures(COLUMN *col, int valeur);
 int valeurs_egales(COLUMN *col, int valeur);
-
-#endif //PROJET_C_DATAFRAME_COLUMN_H
 
 
 #endif //CDATAFRAME_COLUMN_H
