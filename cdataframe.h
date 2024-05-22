@@ -1,5 +1,4 @@
 
-
 #ifndef PROJET_C_DATAFRAME_CDATAFRAME_H
 #define PROJET_C_DATAFRAME_CDATAFRAME_H
 
@@ -11,6 +10,7 @@ typedef struct{
     int TP;
     int* num_col;
     int* num_ligne;
+    COLUMN **col;
 } FRAME;
 
 // Alimentation :
@@ -28,8 +28,8 @@ void affichage_colonne(FRAME* frame, int limite);
 // Opérations usuelles :
 void ajouter_ligne(FRAME* frame);
 void ajouter_colonne(FRAME* frame);
-void supprimer_ligne(FRAME** frame);
-void supprimer_colonne(FRAME** frame);
+void supprimer_ligne(FRAME* frame);
+void supprimer_colonne(FRAME* frame);
 
 void renommer_colonne(FRAME* frame, int col, const char* nouveau_nom);
 void recherche_valeur(FRAME* frame, int valeur);
