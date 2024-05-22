@@ -1,8 +1,6 @@
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "column.h"
 #include "cdataframe.h"
 #define REALLOC_SIZE 256
 
@@ -193,7 +191,6 @@ void supprimer_colonne(FRAME* frame) {
         return;
     } else if (n_col >= frame->TP) {
         printf("Désolé, colonne non trouvée\n");
-        return;
     }
 
     delete_column(&(frame->col[n_col])); // Libère la mémoire allouée pour la colonne
@@ -202,4 +199,76 @@ void supprimer_colonne(FRAME* frame) {
         frame->col[i] = frame->col[i + 1]; // Décale les colonnes pour supprimer celle spécifiée
     }
     frame->TP--; // Décrémente le nombre de colonnes
+}
+
+void renommer_colonne(FRAME* frame, int col, const char* nouveau_nom) {
+    if (col < 0 || col >= frame->TP) {
+        printf("Numéro de colonne invalide.\n");
+        return;
+    }
+    free(frame->col[col]->titre); // Libère l'ancien titre
+    frame->col[col]->titre = strdup(nouveau_nom); // Duplique le nouveau titre
+}
+
+void recherche_valeur(FRAME* frame, int valeur) {
+    for (int col = 0; col < frame->TP; col++) {
+        int occurences = occurence_colonne(frame->col[col], valeur); // Cherche les occurrences dans chaque colonne
+        if (occurences > 0) {
+            printf("Valeur %d trouvée dans la colonne %d (%s), %d fois.\n", valeur, col, frame->col[col]->titre, occurences);
+        }
+    }
+}
+
+void affichage_case(FRAME* frame, int col, int row) {
+    if (col < 0 || col >= frame->TP || row < 0 || row >= frame->col[col]->TL) {
+        printf("Coordonnées invalides.\n");
+        return;
+    }
+    printf("Valeur en colonne %d, ligne %d : %d\n", col, row, frame->col[col]->T[row]);
+}
+
+void remplacer_case(FRAME* frame, int col, int row, int val) {
+    if (col < 0 || col >= frame->TP || row < 0 || row >= frame->col[col]->TL) {
+        printf("Coordonnées invalides.\n");
+        return;
+    }
+    frame->col[col]->T[row] = val; // Remplace la valeur
+}
+
+void affichage_noms_colonnes(FRAME* frame) {
+    for (int col = 0; col < frame->TP; col++) {
+        printf("Colonne %d: %s\n", col, frame->col[col]->titre); // Affiche les titres des colonnes
+    }
+}
+
+void affichage_nb_colonne(FRAME* frame) {
+    printf("Nombre de colonnes : %d\n", frame->TP); // Affiche le nombre de colonnes
+}
+
+void affichage_nb_ligne(FRAME* frame) {
+    printf("Nombre de lignes : %d\n", frame->TL); // Affiche le nombre de lignes
+}
+
+int nb_valeur_inferieur_frame(FRAME* frame, int valeur) {
+    int count = 0;
+    for (int col = 0; col < frame->TP; col++) {
+        count += valeurs_inferieures(frame->col[col], valeur); // Compte les valeurs inférieures dans chaque colonne
+    }
+    return count;
+}
+
+int nb_valeur_superieur_frame(FRAME* frame, int valeur) {
+    int count = 0;
+    for (int col = 0; col < frame->TP; col++) {
+        count += valeurs_superieures(frame->col[col], valeur); // Compte les valeurs supérieures dans chaque colonne
+    }
+    return count;
+}
+
+int nb_valeur_egal_frame(FRAME* frame, int valeur) {
+    int count = 0;
+    for (int col = 0; col < frame->TP; col++) {
+        count += valeurs_egales(frame->col[col], valeur); // Compte les valeurs égales dans chaque colonne
+    }
+    return count;
 }
